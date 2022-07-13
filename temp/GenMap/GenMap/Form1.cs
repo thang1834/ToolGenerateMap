@@ -21,6 +21,7 @@ namespace GenMap
         List<int> ClickCount = new List<int>();
         List<int> Map = new List<int>();
         List<List<int>> MapRow = new List<List<int>>();
+        bool isMouseClicked = false;
         private void Form1_Load(object sender, EventArgs e)
         {
             int width = 64;
@@ -34,7 +35,15 @@ namespace GenMap
                 btn.Margin = new Padding(0);
                 btn.BackColor = Color.White;
                 //btn.Text = i.ToString();
-                btn.Click += (sender1, e1) =>
+                //flowLayoutPanel1.MouseDown += (sender1, e1) =>
+                //{
+                //    isMouseClicked = true;
+                //};
+                //flowLayoutPanel1.MouseUp += (sender1, e1) =>
+                //{
+                //    isMouseClicked = false;
+                //};
+                btn.MouseHover += (sender1, e1) =>
                 {
                     ChangeColor(btn);
                 };
